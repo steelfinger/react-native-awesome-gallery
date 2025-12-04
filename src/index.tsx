@@ -10,8 +10,8 @@ import {
   Image,
   StyleSheet,
   useWindowDimensions,
-  ViewStyle,
 } from 'react-native';
+import type { ViewStyle } from 'react-native';
 import Animated, {
   useAnimatedStyle,
   useDerivedValue,

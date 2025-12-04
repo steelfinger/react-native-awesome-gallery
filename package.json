@@ -65,11 +65,11 @@
     "prettier": "^2.0.5",
     "react": "16.13.1",
     "react-native": "0.63.4",
-    "react-native-builder-bob": "^",
+    "react-native-builder-bob": "^0.30.2",
     "react-native-gesture-handler": "2.3.0",
     "react-native-reanimated": "^3.2.0",
     "release-it": "^14.2.2",
-    "typescript": "^4.1.3"
+    "typescript": "^5.7.2"
   },
   "peerDependencies": {
     "react": "*",
