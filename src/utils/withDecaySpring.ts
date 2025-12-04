@@ -150,6 +150,6 @@ export function withDecaySpring(
       velocity:
         Math.abs(config.velocity || 0) > MIN_VELOCITY ? config.velocity : 0,
       callback,
-    };
-  });
+    } as any;
+  }) as unknown as number;
 }
