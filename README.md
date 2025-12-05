@@ -43,6 +43,26 @@ If you love using React Native Awesome Gallery and would like to show your appre
 
 First you have to follow installation instructions of [Reanimated v4](https://docs.swmansion.com/react-native-reanimated/) and [react-native-gesture-handler](https://docs.swmansion.com/react-native-gesture-handler/)
 
+### Install via Git (Recommended)
+
+This fork is available directly from GitHub with pre-built files included:
+
+```sh
+# Install the dependencies
+yarn add react-native-reanimated@^4.0.0 react-native-worklets@^0.7.0 react-native-gesture-handler
+
+# Install this fork from GitHub
+yarn add git+https://github.com/steelfinger/react-native-awesome-gallery.git#main
+```
+
+Or lock to a specific commit for stability:
+
+```sh
+yarn add git+https://github.com/steelfinger/react-native-awesome-gallery.git#4681498
+```
+
+### Install via npm
+
 ```sh
 # Install the dependencies
 yarn add react-native-reanimated@^4.0.0 react-native-worklets@^0.7.0 react-native-gesture-handler
@@ -54,6 +74,8 @@ yarn add @teroaarnio/react-native-awesome-gallery
 **Important:** Reanimated v4 requires the New Architecture and is not compatible with the Legacy Architecture. Make sure your app is set up for the New Architecture.
 
 Expo is supported since SDK 52+. More information [here](https://docs.expo.dev/versions/latest/sdk/reanimated/)
+
+> **Developer Note:** This repository includes the built `lib/` directory in version control to enable direct consumption via Git dependencies without requiring build tools on the consumer side.
 
 ## Usage
 
