@@ -5,6 +5,8 @@ import type {
 } from 'react-native-reanimated';
 
 const MIN_VELOCITY = 80;
+const REST_SPEED_THRESHOLD = 4;
+const REST_DISPLACEMENT_THRESHOLD = 0.02;
 
 export function withDecaySpring(
   userConfig: WithDecayConfig & WithSpringConfig & { clamp: [number, number] },
@@ -22,8 +24,6 @@ export function withDecaySpring(
       stiffness: 150,
 
       overshootClamping: false,
-      restDisplacementThreshold: 0.02,
-      restSpeedThreshold: 4,
       clamp: userConfig.clamp,
       velocity: userConfig.velocity,
     };
@@ -98,10 +98,10 @@ export function withDecaySpring(
             }
           };
 
-          const isVelocity = Math.abs(velocity) < config.restSpeedThreshold;
+          const isVelocity = Math.abs(velocity) < REST_SPEED_THRESHOLD;
           const isDisplacement =
             config.stiffness === 0 ||
-            Math.abs(toValue - current) < config.restDisplacementThreshold;
+            Math.abs(toValue - current) < REST_DISPLACEMENT_THRESHOLD;
 
           if (zeta < 1) {
             x = underDampedPosition;

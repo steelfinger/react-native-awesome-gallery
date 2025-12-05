@@ -137,7 +137,6 @@ const springConfig = {
   damping: 800,
   mass: 1,
   stiffness: 250,
-  energyThreshold: 0.02,
 };
 
 type ItemRef = { reset: (animated: boolean) => void };
