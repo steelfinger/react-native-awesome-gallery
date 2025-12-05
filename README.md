@@ -1,14 +1,16 @@
 [![npm version](https://badge.fury.io/js/react-native-awesome-gallery.svg)](https://badge.fury.io/js/react-native-awesome-gallery)
 
+> **Note:** This is a fork of [pavelbabenko/react-native-awesome-gallery](https://github.com/pavelbabenko/react-native-awesome-gallery) updated to support React Native Reanimated v4. The original library was built for Reanimated v3 and this fork migrates all APIs to be compatible with Reanimated v4's new architecture and API changes.
+
 ## Support
 
-If you love using React Native Awesome Gallery and would like to show your appreciation, you can support the project by buying me a coffee. Your support helps me keep the project alive and continuously improving. Every little bit counts!
+If you love using React Native Awesome Gallery and would like to show your appreciation, you can support the original project by buying the original author a coffee. Your support helps keep the project alive and continuously improving!
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/pavelbabenko)
 
 <div style="text-align: center;">
   <h1 align="center">React Native Awesome Gallery</h1>
-  <h3 align="center">Photos gallery powered by Reanimated v3 and react-native-gesture-handler</h3>
+  <h3 align="center">Photos gallery powered by Reanimated v4 and react-native-gesture-handler</h3>
 </div>
 
 <table style='width:100%;'>
@@ -37,15 +39,21 @@ If you love using React Native Awesome Gallery and would like to show your appre
 
 ## Installation
 
-> **_Note:_** Starting from v0.3.6 using Reanimated v3 is required
+> **_Note:_** This fork requires React Native Reanimated v4 and react-native-worklets. For Reanimated v3 support, use the [original library](https://github.com/pavelbabenko/react-native-awesome-gallery).
 
-First you have to follow installation instructions of [Reanimated v3](https://docs.swmansion.com/react-native-reanimated/) and [react-native-gesture-handler](https://docs.swmansion.com/react-native-gesture-handler/)
+First you have to follow installation instructions of [Reanimated v4](https://docs.swmansion.com/react-native-reanimated/) and [react-native-gesture-handler](https://docs.swmansion.com/react-native-gesture-handler/)
 
 ```sh
-yarn add react-native-awesome-gallery
+# Install the dependencies
+yarn add react-native-reanimated@^4.0.0 react-native-worklets@^0.7.0 react-native-gesture-handler
+
+# Install this fork
+yarn add @teroaarnio/react-native-awesome-gallery
 ```
 
-Expo is supported since SDK 40. More information [here](https://docs.expo.io/versions/latest/sdk/reanimated/)
+**Important:** Reanimated v4 requires the New Architecture and is not compatible with the Legacy Architecture. Make sure your app is set up for the New Architecture.
+
+Expo is supported since SDK 52+. More information [here](https://docs.expo.dev/versions/latest/sdk/reanimated/)
 
 ## Usage
 

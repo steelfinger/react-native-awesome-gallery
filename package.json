@@ -1,7 +1,7 @@
 {
   "name": "react-native-awesome-gallery",
   "version": "0.4.3",
-  "description": "Awesome gallery with Reanimated v2",
+  "description": "Awesome gallery with Reanimated v4",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
