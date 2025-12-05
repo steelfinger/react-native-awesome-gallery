@@ -19,10 +19,10 @@ import Animated, {
   withTiming,
   withDecay,
   useAnimatedReaction,
-  runOnJS,
   withSpring,
   cancelAnimation,
 } from 'react-native-reanimated';
+import { scheduleOnRN } from 'react-native-worklets';
 import type { SharedValue } from 'react-native-reanimated';
 import {
   Gesture,
@@ -211,7 +211,7 @@ const ResizableImage = React.memo(
         }
 
         if (!onScaleChangeRange) {
-          runOnJS(onScaleChange)(scaleReaction);
+          scheduleOnRN(onScaleChange, scaleReaction);
           return;
         }
 
@@ -219,7 +219,7 @@ const ResizableImage = React.memo(
           scaleReaction > onScaleChangeRange.start &&
           scaleReaction < onScaleChangeRange.end
         ) {
-          runOnJS(onScaleChange)(scaleReaction);
+          scheduleOnRN(onScaleChange, scaleReaction);
         }
       }
     );
@@ -388,7 +388,7 @@ const ResizableImage = React.memo(
         'worklet';
         if (!isActive.value) return;
         if (onScaleStart) {
-          runOnJS(onScaleStart)(scale.value);
+          scheduleOnRN(onScaleStart, scale.value);
         }
 
         onStart();
@@ -427,7 +427,7 @@ const ResizableImage = React.memo(
         'worklet';
         if (!isActive.value) return;
         if (onScaleEnd) {
-          runOnJS(onScaleEnd)(scale.value);
+          scheduleOnRN(onScaleEnd, scale.value);
         }
         if (scale.value < 1) {
           resetValues();
@@ -551,7 +551,7 @@ const ResizableImage = React.memo(
         if (!isActive.value) return;
 
         if (onPanStart) {
-          runOnJS(onPanStart)();
+          scheduleOnRN(onPanStart);
         }
 
         onStart();
@@ -725,7 +725,7 @@ const ResizableImage = React.memo(
           offset.y.value = withDecay({
             velocity: velocityY,
           });
-          runOnJS(onSwipeToClose)();
+          scheduleOnRN(onSwipeToClose);
           return;
         }
 
@@ -774,7 +774,7 @@ const ResizableImage = React.memo(
         'worklet';
         if (!isActive.value) return;
         if (onTap && !interruptedScroll.value) {
-          runOnJS(onTap)();
+          scheduleOnRN(onTap);
         }
         interruptedScroll.value = false;
       });
@@ -790,12 +790,12 @@ const ResizableImage = React.memo(
         if (onTap && interruptedScroll.value) {
           interruptedScroll.value = false;
           if (onTap) {
-            runOnJS(onTap)();
+            scheduleOnRN(onTap);
           }
           return;
         }
         if (onDoubleTap) {
-          runOnJS(onDoubleTap)(scale.value === 1 ? doubleTapScale : 1);
+          scheduleOnRN(onDoubleTap, scale.value === 1 ? doubleTapScale : 1);
         }
 
         if (scale.value === 1) {
@@ -832,7 +832,7 @@ const ResizableImage = React.memo(
           return;
         }
         if (onLongPress) {
-          runOnJS(onLongPress)();
+          scheduleOnRN(onLongPress);
         }
       });
 
@@ -994,7 +994,7 @@ const GalleryComponent = <T extends any>(
 
   useAnimatedReaction(
     () => currentIndex.value,
-    (newIndex) => runOnJS(changeIndex)(newIndex),
+    (newIndex) => scheduleOnRN(changeIndex, newIndex),
     [currentIndex, changeIndex]
   );
 
