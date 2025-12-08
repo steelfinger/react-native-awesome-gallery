@@ -43,9 +43,9 @@ If you love using React Native Awesome Gallery and would like to show your appre
 
 First you have to follow installation instructions of [Reanimated v4](https://docs.swmansion.com/react-native-reanimated/) and [react-native-gesture-handler](https://docs.swmansion.com/react-native-gesture-handler/)
 
-### Install via Git (Recommended)
+### Install from Git
 
-This fork is available directly from GitHub with pre-built files included:
+Since this fork is not yet published to npm, you need to install it directly from GitHub. The repository includes pre-built files in the `lib/` directory, so no build step is required:
 
 ```sh
 # Install the dependencies
@@ -55,20 +55,10 @@ yarn add react-native-reanimated@^4.0.0 react-native-worklets@^0.7.0 react-nativ
 yarn add git+https://github.com/steelfinger/react-native-awesome-gallery.git#main
 ```
 
-Or lock to a specific commit for stability:
+For production use, it's recommended to lock to a specific commit for stability:
 
 ```sh
 yarn add git+https://github.com/steelfinger/react-native-awesome-gallery.git#4681498
-```
-
-### Install via npm
-
-```sh
-# Install the dependencies
-yarn add react-native-reanimated@^4.0.0 react-native-worklets@^0.7.0 react-native-gesture-handler
-
-# Install this fork
-yarn add @teroaarnio/react-native-awesome-gallery
 ```
 
 **Important:** Reanimated v4 requires the New Architecture and is not compatible with the Legacy Architecture. Make sure your app is set up for the New Architecture.
