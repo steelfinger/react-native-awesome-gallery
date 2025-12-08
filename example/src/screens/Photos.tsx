@@ -44,9 +44,8 @@ const renderItem = ({
 
 export const Photos = () => {
   const { top, bottom } = useSafeAreaInsets();
-  const { setParams, goBack } = useNavigation<
-    NavigationProp<NavParams, 'Photos'>
-  >();
+  const { setParams, goBack } =
+    useNavigation<NavigationProp<NavParams, 'Photos'>>();
   const isFocused = useIsFocused();
   const { params } = useRoute<RouteProp<NavParams, 'Photos'>>();
   const gallery = useRef<GalleryRef>(null);
